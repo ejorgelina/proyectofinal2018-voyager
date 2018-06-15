@@ -20,8 +20,15 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 
-Route::middleware('checkloggeduser')->group(function () {
+
+Route::middleware('checkloggeduser')-> group(function () {
 
   Route::get('/publications', 'PublicationsController@index');
 
 });
+
+Route::get('/travelplans', 'TravelplansController@ind
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
