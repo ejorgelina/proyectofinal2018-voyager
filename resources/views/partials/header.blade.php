@@ -1,6 +1,7 @@
+
 <header class="fixed-top row bg-blue justify-content-md-between mb-3 p-1 pl-2 d-flex align-items-center">
     <div class="col-12 col-sm-6 col-md-2 col-lg-3 ">
-        <img alt="logotipo" src={{ asset('images/logo.png')}} class="d-block logotipo" style="margin-left:90px;">
+        <img alt="logotipo" src={{ asset('images/logo.png') }} class="d-block logotipo" style="margin-left:90px;">
         </div>
     <div>
         <a href="faq.php" class="p-2" style="letter-spacing: 0.06em;"> PREGUNTAS FRECUENTES </a>
@@ -30,11 +31,11 @@
             </nav>
             @if (Auth::check())
 
-              <a href="{{--ruta--}}" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Mi perfil</a>
+              <a href="" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Mi perfil</a>
 
             @else
-               <a href="{{--ruta--}}" class="btn btn-outline-light btn-sm mt-1" style="font-size:0.7em;letter-spacing: 0.06em;">Registrarse</a>
-              <a href="{{--ruta--}}" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Iniciar Sesión</a>
+               <a href="{{ route('register') }}" class="btn btn-outline-light btn-sm mt-1" style="font-size:0.7em;letter-spacing: 0.06em;">Registrarse</a>
+              <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Iniciar Sesión</a>
 
             @endif
         </div>

@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
 
-
+Route::get('/login', 'HomeController@viewlogin');
 
 Route::middleware('checkloggeduser')-> group(function () {
 
@@ -27,7 +27,11 @@ Route::middleware('checkloggeduser')-> group(function () {
 
 });
 
-Route::get('/travelplans', 'TravelplansController@ind
+Route::get('/travelplans', 'TravelplansController@index');
+
+// Auth::routes();
+//
+// Route::get('/travelplans','HomeController@index')->name('home');
 
 Auth::routes();
 
