@@ -23,9 +23,11 @@ Route::get('/login', 'HomeController@viewlogin');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
+Route::get('/faq', 'HomeController@viewFaq');
+
 Route::middleware('checkloggeduser')-> group(function () {
 
-  Route::get('/publications', 'PublicationsController@index');
+Route::get('/publications', 'PublicationsController@index');
 
 });
 

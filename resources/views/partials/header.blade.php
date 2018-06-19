@@ -1,10 +1,10 @@
 
 <header class="fixed-top row bg-blue justify-content-md-between mb-3 p-1 pl-2 d-flex align-items-center">
     <div class="col-12 col-sm-6 col-md-2 col-lg-3 ">
-        <img alt="logotipo" src={{ asset('images/logo.png') }} class="d-block logotipo" style="margin-left:90px;">
+      <a href="{{ route('home')}}">  <img alt="logotipo" src={{ asset('images/logo.png') }} class="d-block logotipo" style="margin-left:90px;"> </a>
         </div>
     <div>
-        <a href="faq.php" class="p-2" style="letter-spacing: 0.06em;"> PREGUNTAS FRECUENTES </a>
+        <a href="{{ url('faq') }}" class="p-2" style="letter-spacing: 0.06em;"> PREGUNTAS FRECUENTES </a>
         <a href="#" class="p-2" style="letter-spacing: 0.06em;"> SEGURIDAD </a>
         <a href="#ancla-contacto" class="p-2" style="letter-spacing: 0.06em;"> CONTACTO </a>
         <div class="select-dropdown d-none d-md-inline col-md-5 col-lg-6">
@@ -34,8 +34,12 @@
               <a href="{{ route('perfil') }}" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Mi perfil</a>
 
             @else
+              @if(url()->current()!=route('register'))
                <a href="{{ route('register') }}" class="btn btn-outline-light btn-sm mt-1" style="font-size:0.7em;letter-spacing: 0.06em;">Registrarse</a>
+             @endif
+             @if(url()->current()!=route('login'))
               <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Iniciar Sesión</a>
+              @endif
 
             @endif
         </div>

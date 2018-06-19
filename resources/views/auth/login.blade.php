@@ -1,69 +1,57 @@
-@extends('layouts.app')
+@extends('default')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<div class="contenido">
+          <div class="contenedor-registracion container-fluid imgFondo d-flex flex-column justify-content-center align-items-center w-100">
+              <div class="p-4">
+                  <form class="form-control p-5 margin-auto" method="POST" action="{{ route('login') }}">
+                  @csrf
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                  <h2 class="mb-3 text-center">Bienvenido</h2>
+                    <label for="email" class="input-group input-group-lg"> Ingresa tu e-mail o nombre de usuario</label>
+                    <input id='email' type="email"  class="w-100 mb-3 mt-2 {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}">
+                      @if ($errors->has('email'))
+                        <div class="alert alert-danger">
+                          {{ $errors->first('email') }}
+                          <b class="ion-android-alert"></b>
                         </div>
+                      @endif
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                    <label for="password" class="input-group input-group-lg ">Ingresa tu contraseña</label>
+                    <input id="password" type="password" class="w-100 mb-3 mt-2{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" >
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                          @if ($errors->has('password'))
+                             <div class="alert alert-danger">
+                                  {{ $errors->first('password') }}
+                                  <b class="ion-android-alert"></b>
+                              </div>
+                          @endif
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+          <div class="align-items-center">
+              <label>
+                  <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+              </label>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+              <button type="submit" class="btn btn-lg btn-primary btn-block btn-signin mt-3 mb-3">
+             Login
+              </button>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+              <a href="{{ route('password.request') }}" class="text-dark">  ¿Olvidaste tu contraseña?
+              </a>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+         </div>
+
+
+
+      </form>
     </div>
+  </div>
 </div>
-@endsection
+
+
+{{-- <?php
+    if (isset($_GET['primeraVez'])) {
+      echo "<div class='alert alert-info text-center'>
+<strong><h3>¡Gracias por registrarte!</h3></strong>
+<h5>Iniciá sesión para acceder a tu perfil</h5></div>";
+}
+?> --}}
