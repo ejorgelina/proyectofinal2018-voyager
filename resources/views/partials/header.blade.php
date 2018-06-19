@@ -31,7 +31,7 @@
             </nav>
             @if (Auth::check())
 
-              <a href="" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Mi perfil</a>
+              <a href="{{ route('perfil') }}" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Mi perfil</a>
 
             @else
                <a href="{{ route('register') }}" class="btn btn-outline-light btn-sm mt-1" style="font-size:0.7em;letter-spacing: 0.06em;">Registrarse</a>

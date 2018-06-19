@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/login', 'HomeController@viewlogin');
 
+Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
+
 Route::middleware('checkloggeduser')-> group(function () {
 
   Route::get('/publications', 'PublicationsController@index');

@@ -1,6 +1,7 @@
 @extends('default')
 
 @section('main')
+  <div class="contenido">
   <h1>Bienvenido {{ $user->name }}</h1>
 
 <h4>Tus publicaciones</h4>
@@ -9,5 +10,6 @@
     <li>{{$publication->contenido}}</li>
   @endforeach
 </ul>
+</div>
 
 @endsection
