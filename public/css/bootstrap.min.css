@@ -68,9 +68,10 @@ a{
 }
 
 .container-fluid {
-    background-image: url("../imagenes/mapa-mundi.png");
+    background-image: url("../images/mapa-mundi.png");
     background-repeat: repeat;
       background-size: 900px;
+      margin-bottom:100px;
 }
 
 
@@ -103,7 +104,7 @@ a{
 }
 
 .jumbotron {
-    background-image: url("../imagenes/travel-banner2.jpg");
+    background-image: url("../images/travel-banner2.jpg");
     height: 350px;
     background-repeat: no-repeat;
     width: 100%;
