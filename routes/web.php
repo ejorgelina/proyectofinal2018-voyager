@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/login', 'HomeController@viewlogin');
+// Route::get('/login', 'HomeController@viewlogin');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 

@@ -26,10 +26,6 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function viewlogin()
-    {
-        return view('login');
-    }
 
     public function viewPerfil()
     {

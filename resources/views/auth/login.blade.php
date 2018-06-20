@@ -2,7 +2,7 @@
 
 <div class="contenido">
           <div class="contenedor-registracion container-fluid imgFondo d-flex flex-column justify-content-center align-items-center w-100">
-              <div class="p-4">
+              <div class="p-4" style="max-width: 420px;">
                   <form class="form-control p-5 margin-auto" method="POST" action="{{ route('login') }}">
                   @csrf
 
