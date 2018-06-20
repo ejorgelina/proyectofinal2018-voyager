@@ -12,22 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 // Route::get('/login', 'HomeController@viewlogin');
 
-Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
 Route::get('/faq', 'HomeController@viewFaq');
 
 Route::middleware('checkloggeduser')-> group(function () {
 
 Route::get('/publications', 'PublicationsController@index');
+
+Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
+
+Route::get('/logout', 'Auth\LoginController@pruebaLogout');
 
 });
 

@@ -18,4 +18,5 @@ class PublicationsController extends Controller
     //  $publications = $user->publications;
       return view('publications', compact('user'));
     }
+
 }
