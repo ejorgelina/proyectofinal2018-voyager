@@ -8,7 +8,7 @@
     <form class="form-control p-5 margin-auto" enctype="multipart/form-data" method="POST" action="{{ route('register') }}">
       @csrf
       <h2 class="mb-3 text-center">Registro</h2>
-      <label class="input-group input-group-lg"> Nombre y Apellido </label>
+      <label class="input-group input-group-lg"> Nombre y apellido </label>
         <input id="name" type="text" class="w-100 mb-3 mt-2{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}">
         @if ($errors->has('name'))
           <div class="alert alert-warning">{{ $errors->first('name') }}</div>

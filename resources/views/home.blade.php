@@ -10,10 +10,7 @@
             <p class="lead">Contactá con viajeros en todo el mundo y planificá tu viaje con ellos.</p>
             <p>Prepará tu agenda de viaje o colaborá en las agendas de otros viajeros.</p>
             <p class="lead">
-                <a href="#!" class="btn btn-outline-dark mt-1">
-              <span class="ion-social-facebook mr-2"></span>
-                Registrate con Facebook</a>
-                <a href="#!" class="btn btn-outline-dark mt-1">
+                <a href="{{ route('register')}}" class="btn btn-outline-dark mt-1">
               <span class="ion-ios-email mr-2"></span>
                 Registrate con tu email</a>
 

@@ -2,12 +2,12 @@
 
 <div class="contenido">
           <div class="contenedor-registracion container-fluid imgFondo d-flex flex-column justify-content-center align-items-center w-100">
-              <div class="p-4" style="max-width: 420px;">
+              <div class="p-4" style="width: 420px;">
                   <form class="form-control p-5 margin-auto" method="POST" action="{{ route('login') }}">
                   @csrf
 
                   <h2 class="mb-3 text-center">Bienvenido</h2>
-                    <label for="email" class="input-group input-group-lg"> Ingresa tu e-mail o nombre de usuario</label>
+                    <label for="email" class="input-group input-group-lg"> Ingresa tu e-mail                                </label>
                     <input id='email' type="email"  class="w-100 mb-3 mt-2 {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}">
                       @if ($errors->has('email'))
                         <div class="alert alert-danger">

@@ -22,11 +22,11 @@ Auth::routes();
 // Route::get('/login', 'HomeController@viewlogin');
 
 
-Route::get('/faq', 'HomeController@viewFaq');
+Route::get('/faq', 'HomeController@viewFaq')->name('faq');
 
 Route::middleware('checkloggeduser')-> group(function () {
 
-Route::get('/publications', 'PublicationsController@index');
+Route::get('/publications', 'PublicationsController@index')->name('publications');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
