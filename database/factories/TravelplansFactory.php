@@ -6,6 +6,7 @@ use App\Travelplan;
 
 $factory->define(Travelplan::class, function (Faker $faker) {
     return [
+      'created_at' => $faker->dateTime(),
       'fecha_de_salida' => $faker->dateTime(),
       'fecha_de_regreso' => $faker->dateTime(),
       'presupuesto' => $faker->randomNumber(),

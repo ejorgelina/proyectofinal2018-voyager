@@ -21,6 +21,9 @@ Auth::routes();
 
 // Route::get('/login', 'HomeController@viewlogin');
 
+Route::get('/publication/create', 'PublicationsController@create')->name('publication');
+
+Route::post('/publication', 'PublicationsController@store');
 
 Route::get('/faq', 'HomeController@viewFaq')->name('faq');
 
@@ -31,6 +34,7 @@ Route::get('/publications', 'PublicationsController@index')->name('publications'
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
 Route::get('/logout', 'Auth\LoginController@pruebaLogout');
+
 
 });
 
