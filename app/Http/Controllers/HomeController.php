@@ -41,5 +41,10 @@ class HomeController extends Controller
       return view('faq');
     }
 
-
+// agregue viernes 22 jul
+    public function viewFriends(){
+      $user = Auth::user();
+      $friends = $user->friends;
+      return view('friends', compact('friends'));
+    }
 }

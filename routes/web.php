@@ -36,6 +36,12 @@ Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 Route::get('/logout', 'Auth\LoginController@pruebaLogout');
 
 
+
+Route::get('/friends', 'HomeController@viewFriends');
+
+
+
+
 });
 
 Route::get('/travelplans', 'TravelplansController@index');
