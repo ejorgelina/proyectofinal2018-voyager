@@ -11,19 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PublicationsController@index')->name('home');
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index');
+Route::get('/publications/create', 'PublicationsController@create')->name('publication');
 
-// Route::get('/login', 'HomeController@viewlogin');
-
-Route::get('/publication/create', 'PublicationsController@create')->name('publication');
-
-Route::post('/publication', 'PublicationsController@store');
+Route::post('/publications/create', 'PublicationsController@store');
 
 Route::get('/faq', 'HomeController@viewFaq')->name('faq');
 
@@ -31,19 +25,12 @@ Route::middleware('checkloggeduser')-> group(function () {
 
 Route::get('/publications', 'PublicationsController@index')->name('publications');
 
+Route::get('/home/muro', 'PublicationsController@todas');
+
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
-Route::get('/logout', 'Auth\LoginController@pruebaLogout');
+Route::get('/perfil/config', 'HomeController@viewConfig')->name('configuracion');
 
+Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
 
 });
-
-Route::get('/travelplans', 'TravelplansController@index');
-
-// Auth::routes();
-//
-// Route::get('/travelplans','HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

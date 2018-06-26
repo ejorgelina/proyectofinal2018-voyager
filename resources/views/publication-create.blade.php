@@ -6,7 +6,7 @@
        <p>{{ $error }}</p>
      @endforeach
    @endif
-   <form action="/publication"  enctype="multipart/form-data" method="POST">
+   <form action="/publications/create"  enctype="multipart/form-data" method="POST">
  {{ csrf_field() }}
      <ul class="list-group">
        <li class="border rounded border-info p-3 m-4">

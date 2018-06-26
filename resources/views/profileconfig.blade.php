@@ -28,8 +28,6 @@
 </head>
 
 
-
-
   <div class="grid-container p-5 mt-5">
 
     <div class="item2 text-center">

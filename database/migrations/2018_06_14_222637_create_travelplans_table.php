@@ -16,7 +16,6 @@ class CreateTravelplansTable extends Migration
         Schema::create('travelplans', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->dateTime('created_at');
             $table->date('fecha_de_salida');
             $table->date('fecha_de_regreso');
             $table->integer('presupuesto');

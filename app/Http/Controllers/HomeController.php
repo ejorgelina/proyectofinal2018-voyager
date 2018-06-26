@@ -25,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        return view('home', compact('user'));
     }
 
 
@@ -33,6 +34,12 @@ class HomeController extends Controller
       $user = Auth::user();
     //  $publications = $user->publications;
       return view('perfil', compact('user'));
+    }
+
+    public function viewConfig(){
+      $user = Auth::user();
+    //  $publications = $user->publications;
+      return view('profileconfig', compact('user'));
     }
 
 
