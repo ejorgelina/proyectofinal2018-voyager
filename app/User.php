@@ -34,6 +34,12 @@ class User extends Authenticatable
     return $this->hasMany(Publication::class);
   }
 
+//agrego function travelplans
+  public function travelplans()
+  {
+    return $this->hasMany(Travelplan::class);
+  }
+
   public function friends(){
     return $this->belongsToMany(User::class,'friends','idAmigo1', 'idAmigo2');
   }
