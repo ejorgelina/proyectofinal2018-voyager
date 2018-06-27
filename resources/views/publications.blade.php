@@ -12,7 +12,7 @@
           <li class="border rounded border-info p-3 m-4" style="background-color:rgb(255, 255, 255);">
             <h6> Título: {{$publication->titulo}}</h6>
             <p> <small> Fecha de creación: {{ $publication->created_at }} </small> </p>
-            <p > {{$publication->contenido}} </p></li>
+            <p > {{$publication->contenido}} {{ $publication->user_id}} </p></li>
           @endforeach
         </ul>
       </div>
