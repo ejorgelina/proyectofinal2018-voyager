@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/publications/create', 'PublicationsController@create')->name('publication');
 
-Route::post('/publications/create', 'PublicationsController@store');
+//Route::post('/publications/create', 'PublicationsController@store');
 
 Route::get('/faq', 'HomeController@viewFaq')->name('faq');
 
@@ -37,6 +37,9 @@ Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
 Route::get('/friends', 'HomeController@viewFriends');
 
 
-
+            // agregue Eve
+            Route::middleware('auth')->group(function () {
+                Route::resource('publication', 'PublicationsController');
+            });
 
 });

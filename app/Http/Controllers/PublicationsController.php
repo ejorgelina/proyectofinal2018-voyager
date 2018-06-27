@@ -45,25 +45,59 @@ class PublicationsController extends Controller
   public function store(Request $request)
   {
     $request->validate ([
-      'contenido' => 'required',
-      'titulo'=> 'required',
-      'foto' => 'image'
+      'contenido' => 'required_if:foto, null',
+      'foto' => 'image|required_if:contenido, null'
     ]);
-
-
-    $file = $request->file('foto');
-
-    $name = $request->user()->id . '.' . $file->extension();
-
-    $path = $file->storePubliclyAs('publications', $name);
 
     auth()->user()->publications()->create([
-      'contenido' => $request->contenido,
-      'titulo'=> $request->titulo,
-      'foto' => $path
+       'contenido' => $request->contenido,
+      //'titulo'=> $request->titulo,  porque modifique la migracion de publication
+      //'foto' => $path
     ]);
 
-    return view('prueba');
+ if ($request->file('foto')){
+    $file = $request->file('foto');
+    $name = $request->user()->id . '.' . $file->extension();
+    $path = $file->storePubliclyAs('imagesPublications', $name);
+
+    auth()->user()->publications()->create([
+      'foto' => $path
+    ]);
+}
+
+
+    //return view('prueba');
+    return redirect()->back();
   }
+
+  public function edit(Publication $publication)
+  {
+      return view('publication-update', [
+          'publication' => $publication
+      ]);
+  }
+
+  public function update(Request $request, Publication $publication)
+    {
+        $request->validate([
+            //'titulo' => 'required',
+            'contenido' => 'required'
+
+            // 'image' => 'image'
+        ]);
+
+        $publication->update($request->except('_token'));
+
+        return redirect()->to('publication')
+            ->with('message', 'Publication updated');
+    }
+
+    public function destroy(Publication $publication)
+  {
+      $publication->delete();
+
+      return redirect()->back()->with('message', 'Publication deleted');
+  }
+
 
 }

@@ -97,6 +97,15 @@
         </div>
 
       </form>
+<div>
+  @php
+      dd($user->friends);
+  @endphp
+
+  @foreach ($user->friends() as $friend)
+    {{$friend}}
+  @endforeach
+</div>
 
     </div>
   </div>

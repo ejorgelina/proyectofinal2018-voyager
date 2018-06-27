@@ -65,6 +65,7 @@
               <div class="dropdown-content">
                 <a href="{{ route('perfil') }}">Mi perfil</a>
                 <a href="{{ url('publications')}}">Mis publicaciones</a>
+                <a href="{{ url('travelplans')}}">Mis Planes de Viaje </a>
                 <a href="{{ route('configuracion') }}">Configuración de cuenta</a>
 
               </div>
