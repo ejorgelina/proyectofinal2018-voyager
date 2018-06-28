@@ -37,8 +37,7 @@
 </style>
 </head>
 
-
-<header class="row fixed-top bg-blue mb-3  p-1 align-items-center justify-content-around">
+<header class="row fixed-top bg-blue mb-3  p-1 align-items-center justify-content-around" id="header">
 
   <div class="justify-content-start">
     @if (Auth::check())
@@ -60,7 +59,7 @@
 
 
           <div class="dropdown">
-            <button class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">
+            <button class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" id="button">
               Menú </button>
               <div class="dropdown-content">
                 <a href="{{ route('perfil') }}">Mi perfil</a>
@@ -73,10 +72,12 @@
 
             <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;">Logout</a>
+            document.getElementById('logout-form').submit();" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" id="button">Logout</a>
 
-
+            <button class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" onclick="return cambiarColor()" id="button">
+              MAGIA! </button>
           </div>
+
 
         @else
 
@@ -125,4 +126,5 @@
 
               @endif
             </div>
+            <script src="/js/magia.js"></script>
           </header>

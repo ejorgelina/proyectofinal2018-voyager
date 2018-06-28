@@ -28,17 +28,19 @@
 </head>
 
 
-  <div class="grid-container p-5 mt-5">
 
-    <div class="item2 text-center">
-      <h1>  Perfil </h1>
-      <h2>{{ $user->name }}</h2>
-      <iframe src="https://giphy.com/embed/w8f9g2x44aGI" width="200"  frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dance-friday-t-w8f9g2x44aGI"></a></p>
+<div class="grid-container p-5 mt-5">
 
-      <br>
+  <div class="item2 text-center">
+    <h1> Mi perfil: </h1>
+    <h2>{{ $user->name }}</h2>
+    <img src="https://avatarfiles.alphacoders.com/114/114469.png" width="200" height="200" style="border-radius: 50%;">
 
-      <h4> <em> falta COMPLETAR PAIS </em> </h4>
-    </div>
+    <br>
+
+    <h4> <em> Argentina </em> </h4>
+  </div>
+
 
 
 
@@ -91,7 +93,7 @@
         </div>
 
         <div>
-          <a href="#" class="btn btn-lg btn-primary btn-block btn-signin mt-3 mb-3">Guardar cambios</a>
+          <a href="#" class="btn btn-lg btn-primary btn-signin mt-3 mb-3">Guardar cambios</a>
         </div>
 
       </form>

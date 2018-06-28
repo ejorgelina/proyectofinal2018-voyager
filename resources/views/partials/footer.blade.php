@@ -1,3 +1,4 @@
+@if (!Auth::check())
 <footer class="bg-blue margin mt-3 text-white text-center fixed-bottom">
 
     <p class="pt-2">SEGUINOS</p>
@@ -14,3 +15,5 @@
         $('.main-nav').slideToggle('fast');
     });
 </script>
+
+@endif
