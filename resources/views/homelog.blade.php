@@ -1,8 +1,8 @@
 
-@include('prueba')
+
 <div class="contenido">
   <div class="container-fluid" >
-
+@include('prueba')
     @foreach ($publications as $publication)
       <div class="border p-5 mb-5 bg-white rounded" style="background-color:white; width:70%;margin:auto;">
         <div class="d-flex justify-content-between align-content-center ">

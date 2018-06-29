@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{{-- <title>rl-carousel</title> --}}
-	<link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,300,400,700" rel="stylesheet">
+	{{-- <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro:200,300,400,700" rel="stylesheet"> --}}
 </head>
 <body>
   <style media="screen">
@@ -25,12 +25,11 @@ background-color: rgb(255, 255, 255);
 */
 
 .v-centered {
-margin-top: 50px;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 100vw;
-height: 100vh;
+/* width: 100vw; */
+/* height: 100vh; */
 }
 .carousel {
 position: relative;
@@ -46,10 +45,11 @@ left:  0px;
 .project {
 width: 300px;
 height: 350px;
-background-color: #FFF;
--webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.5);
+/* background-color: #FFF; */
+background-color: rgba(161, 204, 207, 0.5);
+/* -webkit-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.5);
   -moz-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.5);
-box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.5);
+box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.5); */
 text-align: center;
 margin: 0 10px 15px 0;
 display: inline-block;
@@ -61,11 +61,12 @@ width:  280px;
 height: 200px;
 }
 .project p {
-margin: 10px;
+/* margin: 10px; */
 font-family: 'Source Sans Pro', sans-serif;
 font-weight: 200;
-text-align: left;
+text-align: justify;
 white-space: normal;
+padding: 10px;
 }
 
 .sections {

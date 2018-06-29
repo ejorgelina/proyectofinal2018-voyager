@@ -152,7 +152,15 @@ margin-left: 50px;
               <br><br>
 
 
-              <input class = "" type="file" name="foto"> <button class="btn btn-primary" type="submit" name="button">Publicar</button>
+              <input class = "" type="file" name="foto">
+              {{-- <div class="image-upload" style="width: 80px;cursor: pointer;">
+                   <label for="file-input">
+                     <span class="ion-images m-2 text-dark" style="font-size:40px;"></span>
+                   </label>
+                   <input name="foto" id="file-input" type="file" style="display: none;"> --}}
+                   <button class="btn btn-primary" type="submit" name="button">Publicar</button>
+
+               </div>
               <br><br>
 
             </div>

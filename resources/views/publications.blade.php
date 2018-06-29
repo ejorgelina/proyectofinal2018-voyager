@@ -49,7 +49,7 @@
                         <div class="post-description">
                           <p>{{$publication->contenido}}</p>
                           @if ($publication->foto)
-                            <img src="{{$publication->foto}}" width="50px">
+                            <img src="/storage/{{$publication->foto}}" width="50px">
                           @endif
 
 

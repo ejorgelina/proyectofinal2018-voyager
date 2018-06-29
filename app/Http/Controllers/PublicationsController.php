@@ -49,25 +49,27 @@ class PublicationsController extends Controller
       'foto' => 'image|required_if:contenido, null'
     ]);
 
-    auth()->user()->publications()->create([
+    if ($request->file('foto')){
+       $file = $request->file('foto');
+       $name = $request->user()->id . '.' . $file->extension();
+       $path = $file->storePubliclyAs('public/imagesPublications', $name);
+     }
+
+    $pub = auth()->user()->publications()->create([
        'contenido' => $request->contenido,
-      //'titulo'=> $request->titulo,  porque modifique la migracion de publication
-      //'foto' => $path
+      'foto' => 'imagesPublications/' . $name
     ]);
 
- if ($request->file('foto')){
-    $file = $request->file('foto');
-    $name = $request->user()->id . '.' . $file->extension();
-    $path = $file->storePubliclyAs('imagesPublications', $name);
+  //  if ($request->file('foto')){
+  //     $file = $request->file('foto');
+  //     $name = $request->user()->id . '.' . $file->extension();
+  //     $path = $file->storePubliclyAs('imagesPublications', $name);
+  //
+  //     $pub->foto = $path;
+  //     $pub->save();
+  // }
 
-    auth()->user()->publications()->create([
-      'foto' => $path
-    ]);
-}
-
-
-    //return view('prueba');
-    return redirect()->back();
+     return redirect('publications');
   }
 
   public function edit(Publication $publication)
