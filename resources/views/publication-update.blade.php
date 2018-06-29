@@ -24,7 +24,9 @@
             </span>
           @endif
 
-            <a href="#!" class="btn btn-sm btn-outline-dark m-2">Actualizar</a>
+            {{-- <a href="#!" class="btn btn-sm btn-outline-dark m-2">Actualizar</a> --}}
+            <button type="submit" class="btn btn-sm btn-outline-dark m-2">Actualizar</button>
+
 
         </div>
 

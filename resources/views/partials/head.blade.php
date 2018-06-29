@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css')}}>
+    {{-- <link rel="stylesheet" href={{ asset('css/bootstrap.min.css')}}> --}}
+    <link id="pagestyle" rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <style>
 
     </style>

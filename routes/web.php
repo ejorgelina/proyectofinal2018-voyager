@@ -13,6 +13,11 @@
 
 Route::get('/', 'PublicationsController@index')->name('home');
 
+
+Route::get('/lpm', function(){
+  return view('prueba');
+});
+
 Auth::routes();
 
 Route::get('/publications/create', 'PublicationsController@create')->name('publication');
@@ -31,11 +36,20 @@ Route::get('/publications', 'PublicationsController@index')->name('publications'
 Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
 
 Route::get('/home/muro', 'PublicationsController@todas');
+Route::post('/home/muro', 'HomeController@storeFriend');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
 Route::get('/perfil/config', 'HomeController@viewConfig')->name('configuracion');
 
+<<<<<<< HEAD
+=======
+Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
+
+
+
+
+>>>>>>> 97b34da00285241a3de6718a4752d3ea7dd66003
 Route::get('/friends', 'HomeController@viewFriends');
 
 

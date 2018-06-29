@@ -33,8 +33,23 @@
   <div class="item2 text-center">
     <h1> Mi perfil: </h1>
     <h2>{{ $user->name }}</h2>
-    <img src="https://avatarfiles.alphacoders.com/114/114469.png" width="200" height="200" style="border-radius: 50%;">
+      <img src="https://avatarfiles.alphacoders.com/114/114469.png" width="200" height="200" style="border-radius: 50%;">
+    {{-- @if (!$user->avatar)
+      <img src="https://avatarfiles.alphacoders.com/114/114469.png" width="200" height="200" style="border-radius: 50%;">
+<div class="">
+  <span>Subi tu foto de perfil</span>
+  <div class="image-upload" style="width: 80px;cursor: pointer;">
 
+ <label for="file-input">
+   <span class="ion-images m-2 text-dark" style="font-size:40px;"></span>
+    <input name="foto" id="file-input" type="file" class="ion-images m-2 text-dark" style="font-size:40px;" >
+ </label>
+
+</div>
+</div>
+    @else
+    <img src="{{$user->avatar}}" width="200" height="200" style="border-radius: 50%;">
+@endif --}}
     <br>
 
     <h4> <em> Argentina </em> </h4>

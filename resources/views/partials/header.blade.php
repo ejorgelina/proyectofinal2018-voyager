@@ -74,8 +74,10 @@
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();" class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" id="button">Logout</a>
 
-            <button class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" onclick="return cambiarColor()" id="button">
-              MAGIA! </button>
+            {{-- <button class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" onclick="return cambiarColor()" id="button">
+              MAGIA! </button> --}}
+
+              <button class="btn btn-sm btn-outline-light mt-1 ml-3" style="font-size:0.7em;letter-spacing: 0.06em;" onclick="return cambiarColor()" id="magia">MAGIA! </button>
           </div>
 
 

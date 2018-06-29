@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Friend extends Model
 {
-  protected $table ='friends'; 
+  protected $table ='friends';
     protected $guarded = [];
 }
