@@ -42,14 +42,8 @@ Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
 Route::get('/perfil/config', 'HomeController@viewConfig')->name('configuracion');
 
-<<<<<<< HEAD
-=======
 Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
 
-
-
-
->>>>>>> 97b34da00285241a3de6718a4752d3ea7dd66003
 Route::get('/friends', 'HomeController@viewFriends');
 
 
