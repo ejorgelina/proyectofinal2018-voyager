@@ -1,6 +1,6 @@
 @extends('default')
 
-<div style="background-image: {{ asset('images/mapa-mundi.png') }}">
+<div id= "fondo" style="background-image: {{ asset('images/mapa-mundi.png') }}">
   @section('main')
 
     <div class="contenido" style="width:75%; margin:auto; margin-top:100px; margin-bottom:100px;">

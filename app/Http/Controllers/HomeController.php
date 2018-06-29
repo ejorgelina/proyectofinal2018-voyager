@@ -58,11 +58,16 @@ class HomeController extends Controller
 
 
 
-      public function storeFriend($friend_id)
+      public function storeFriend(Request $request)
       {
-        Friend::create([
-           'idAmigo1' => Auth::user()->id,
-           'idAmigo2'=> $friend_id
-        ]);
+        if ($request->isMethod('post')){
+          Friend::create([
+             'idAmigo1' => Auth::user()->id,
+             'idAmigo2'=> $request->input('nombre')
+          ]);
+          return response()->json([
+              'msj' => 'guardado exitosamente'
+          ]);
+        }
       }
 }

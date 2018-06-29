@@ -80,7 +80,6 @@ class PublicationsController extends Controller
   public function update(Request $request, Publication $publication)
     {
         $request->validate([
-            //'titulo' => 'required',
             'contenido' => 'required'
 
             // 'image' => 'image'
@@ -88,8 +87,7 @@ class PublicationsController extends Controller
 
         $publication->update($request->except('_token'));
 
-        return redirect()->to('publication')
-            ->with('message', 'Publication updated');
+        return redirect()->to('publication');
     }
 
     public function destroy(Publication $publication)

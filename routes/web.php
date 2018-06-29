@@ -13,6 +13,11 @@
 
 Route::get('/', 'PublicationsController@index')->name('home');
 
+
+Route::get('/lpm', function(){
+  return view('prueba');
+});
+
 Auth::routes();
 
 Route::get('/publications/create', 'PublicationsController@create')->name('publication');
@@ -26,7 +31,7 @@ Route::middleware('checkloggeduser')-> group(function () {
 Route::get('/publications', 'PublicationsController@index')->name('publications');
 
 Route::get('/home/muro', 'PublicationsController@todas');
-Route::post('/home/muro/{friend_id}', 'HomeController@storeFriend');
+Route::post('/home/muro', 'HomeController@storeFriend');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 

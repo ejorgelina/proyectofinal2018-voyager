@@ -1,5 +1,5 @@
 
-
+@include('prueba')
 <div class="contenido">
   <div class="container-fluid" >
 
@@ -10,11 +10,14 @@
           <h6 class="text-capitalize font-weight-bold text-right">  <img src="{{ asset('images/airport.jpg') }}" width="50px" height="50px" style="border-radius:50%;"> {{ $publication->user->name }} </h6>
 
           <form id = "form-friend" action="/home/muro" method="post">
-            {{ csrf_field() }}
+            <meta name="_token" content="{!! csrf_token() !!}"/>
+            {{-- <input type="text" class = "friend" value = "{{$publication->user_id}}"> --}}
+            {{-- <button class = "btn btn-primary btn-sm m-2 btn-follow" type="button"> Seguir </button> --}}
+            <input type="button" class = " btn btn-primary btn-sm m-2 friend" name = "friend" value="Seguir" data-id = "{{$publication->user_id}}">
 
-            <button class = "btn btn-primary btn-sm m-2 btn-follow" type="button" value = "{{$publication->user_id}}"> Seguir </button>
             <span>{{$publication->user_id}}</span>
           </form>
+
         </div>
         <h3 class=""> {{ $publication->titulo }} </h3>
         <p><b>Fecha: {{ $publication->created_at }}</b> {{ $publication->contenido }}</p>
@@ -25,57 +28,45 @@
       </div>
     @endforeach
 
-    <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    {{-- <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 
 
     <script type="text/javascript">
-    $(document).ready(function () {
 
-      $('.btn-follow').each( function(ev){
-        $(this).on('click', function(ev){
-          console.log('click a mi');
-          var parametros = {
-            propiedad1: $('.btn-follow').attr('value')
-          };
-          console.log($('.btn-follow').attr('value'));
-          console.log(parametros.propiedad1);
-          $.ajax({
-            data:  parametros,
-            url:   '/home/muro/' + parametros.propiedad1,
-            type:  'post',
-            // beforeSend: function () {
-            //         $("#resultado").html("Procesando, espere por favor...");
-            // },
-          });
+    $(document).ready(function() {
+      $.ajaxSetup({
+        headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')}
+      });
+    });
 
-          $('.btn-follow').innerText= "Siguiendo";
+
+      $(".friend").click(function (e) {
+        e.preventDefault();
+        var elemento = this;
+        //console.log( $(this).attr('data-id'));
+          var nombre = $(this).attr('data-id');
+        $.ajax({
+          type: "post",
+          url: "/home/muro",
+          data: {
+            'nombre': nombre
+          }, success: function (msg) {
+            //console.log(msg);
+            //alert("Se ha realizado el POST con exito "+msg);
+            $(elemento).attr('value', "Siguiendo");
+          }
+        }).fail(function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+          var errores = JSON.parse(jqXHR.responseText);
+          //mostrmos en la consola los errores que envie  el ajax
+          console.log(errores);
+          console.log(JSON.stringify(jqXHR));
+          console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
 
         });
       });
-    });
-    // var action = $('#form-friend').attr('action');
-    // var met = $('#form-friend').attr('method');
-    //
-    // $('#form-friend').on('submit', function(ev){
-    //   ev.preventDefault();
-    //   var info = $('#form-friend').serialize();
-    //
-    //   $.post(action,info, function(resp,estado,jqXHR){
-    //     console.log(resp);
-    //     console.log(estado);
-    //     console.log(jqXHR);
-    //   });
-    // });
+    </script>
 
 
-    // $('#boton-coso').on('click', function(ev){
-    //   alert("lalalal");
-    // });
-
-
-  </script>
-  
-
-  {{ $publications->links() }}
-</div>
+    {{ $publications->links() }}
+  </div>
 </div>
