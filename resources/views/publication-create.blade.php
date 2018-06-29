@@ -1,5 +1,5 @@
 
-<div class="contenido d-flexs">
+<div class=" d-flexs">
   @if ($errors)
     @foreach ($errors->all() as $error)
       <p>{{ $error }}</p>
@@ -119,7 +119,7 @@
     <ul class="list-group">
       <li class="p-3 m-4">
 
-        <div class="col-sm-8" style="margin:auto;">
+        <div class="col-12" style="margin:auto; background-color:rgba(255, 255, 255);">
           <div class="panel panel-white post ">
             <div class="post-heading">
               <div class="pull-left image">
@@ -138,22 +138,25 @@
               </div>
 
 
-              <div class="post-description">
+              <div class="post-description d-flex justify-content-center col-10">
+                <div class="d-inline-block">
+                  <div class="input-group">
 
-                <div class="input-group">
+                    <textarea name="contenido" class="form-control" placeholder="¿Qué hay de nuevo?" type="text"></textarea>
+                    {{-- <input class="form-control" placeholder="Que hay de nuevo?" type="text"> --}}
+                    <span class="input-group-addon">
+                      <a href="#"><i class="fa fa-edit"></i></a>
+                    </span>
 
-                  <textarea name="contenido" class="form-control" placeholder="¿Qué hay de nuevo?" type="text"></textarea>
-                  {{-- <input class="form-control" placeholder="Que hay de nuevo?" type="text"> --}}
-                  <span class="input-group-addon">
-                    <a href="#"><i class="fa fa-edit"></i></a>
-                  </span>
+                  </div>
+                  <br><br>
+
+
+                  <input class = "" type="file" name="foto"> <button class="btn btn-primary" type="submit" name="button">Publicar</button>
+                  <br><br>
 
                 </div>
-                <br><br>
-                <input class = "" type="file" name="foto">
-                <br><br>
 
-                <button class= "btn btn-primary" type="submit" name="button">Publicar</button>
 
               </div>
             </div>

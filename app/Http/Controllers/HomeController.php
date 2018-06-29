@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Friend;
 
 class HomeController extends Controller
 {
@@ -54,4 +55,14 @@ class HomeController extends Controller
       $friends = $user->friends;
       return view('friends', compact('friends'));
     }
+
+
+
+      public function storeFriend($friend_id)
+      {
+        Friend::create([
+           'idAmigo1' => Auth::user()->id,
+           'idAmigo2'=> $friend_id
+        ]);
+      }
 }

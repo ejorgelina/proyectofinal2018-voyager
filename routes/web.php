@@ -26,12 +26,15 @@ Route::middleware('checkloggeduser')-> group(function () {
 Route::get('/publications', 'PublicationsController@index')->name('publications');
 
 Route::get('/home/muro', 'PublicationsController@todas');
+Route::post('/home/muro/{friend_id}', 'HomeController@storeFriend');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
 Route::get('/perfil/config', 'HomeController@viewConfig')->name('configuracion');
 
 Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
+
+
 
 
 Route::get('/friends', 'HomeController@viewFriends');
