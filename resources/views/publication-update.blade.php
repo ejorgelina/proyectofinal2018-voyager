@@ -37,9 +37,6 @@
   @endsection
 </div>
 
-
-
-
 {{-- <div class="form-group">
 <label for="image" class="col-form-label col-md-12">Image</label>
 

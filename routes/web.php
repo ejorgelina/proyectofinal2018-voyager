@@ -17,6 +17,9 @@ Auth::routes();
 
 Route::get('/publications/create', 'PublicationsController@create')->name('publication');
 
+//agrego rutas para actualizacion Travelplans
+Route::get('/travelplans/create', 'TravelplansController@create')->name('travelplan');
+
 //Route::post('/publications/create', 'PublicationsController@store');
 
 Route::get('/faq', 'HomeController@viewFaq')->name('faq');
@@ -25,14 +28,13 @@ Route::middleware('checkloggeduser')-> group(function () {
 
 Route::get('/publications', 'PublicationsController@index')->name('publications');
 
+Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
+
 Route::get('/home/muro', 'PublicationsController@todas');
 
 Route::get('/perfil', 'HomeController@viewPerfil')->name('perfil');
 
 Route::get('/perfil/config', 'HomeController@viewConfig')->name('configuracion');
-
-Route::get('/travelplans', 'TravelplansController@index')->name('travelplans');
-
 
 Route::get('/friends', 'HomeController@viewFriends');
 
@@ -40,6 +42,10 @@ Route::get('/friends', 'HomeController@viewFriends');
             // agregue Eve
             Route::middleware('auth')->group(function () {
                 Route::resource('publication', 'PublicationsController');
+            });
+            // agregue Eve
+            Route::middleware('auth')->group(function () {
+                Route::resource('travelplan', 'TravelplansController');
             });
 
 });

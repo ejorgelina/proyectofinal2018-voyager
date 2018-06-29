@@ -16,10 +16,6 @@ class PublicationsController extends Controller
     return view('publication-create');
   }
 
-
-
-
-
   public function index(){
     $user = Auth::user();
     $publications = [];
@@ -32,7 +28,6 @@ class PublicationsController extends Controller
       return view('home', compact('publications','user'));
 
   }
-
 
   public function todas(){
     $user = Auth::user();
